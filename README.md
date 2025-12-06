@@ -1,36 +1,116 @@
-# 🏦 Bank Customer Data Preparation & Exploration
-##  A Data Science Case Study | Customer Churn & Segmentation Project
+# 🏦 Bank Customer Data Preparation & Exploration  
+## 📘 A Data Science Case Study | Customer Churn & Segmentation Project
 
 ## 🎯 Overview
-This project showcases my work preparing and exploring customer data for a national banking institution. The goal was to transform raw operational data into a clean, validated, and insights-ready dataset to support two machine learning initiatives: Customer Churn Prediction and Customer Segmentation.
+This project showcases my work preparing and exploring customer data for a national banking institution. The goal was to transform raw operational data into a clean, validated, and insights-ready dataset to support two machine learning initiatives:
+
+- **Customer Churn Prediction**
+- **Customer Segmentation**
 
 I led the full data preparation workflow, including data integration, quality assurance, cleaning, exploratory analysis, and feature preparation for modeling.
 
-## 🌍 Context
-The Bank of Mavenland—a large financial institution in a data-centric region—was experiencing:
+---
 
--  An increase in customer churn  
--  A slowdown in customer acquisition  
--  A lack of clarity around the drivers of these trends  
+## 🌍 Context & Business Problem
+The **Bank of Mavenland**—a large financial institution in a data-centric region—was experiencing:
+
+- ✔ An increase in customer churn  
+- ✔ A slowdown in customer acquisition  
+- ✔ A lack of clarity around the drivers of these trends  
 
 The product team sought a deeper understanding of customer behavior and needed data prepared for advanced analytics. I was hired as a Data Scientist to build the foundation for two high-impact machine learning projects.
 
-## 🧩 Project Challenges
-The data existed across several disconnected sources, each with different formats, inconsistencies, and quality issues. Before any modeling could begin, the data needed to be:
+---
 
--  Joined accurately  
--  Cleaned thoroughly  
--  Audited for quality  
--  Explored for meaningful patterns  
+## 🧩 Project Challenges
+The bank’s customer data existed across several disconnected sources, each with different formats, inconsistencies, and quality issues. Before any modeling could begin, the data needed to be:
+
+- ✔ Joined accurately  
+- ✔ Cleaned thoroughly  
+- ✔ Audited for quality  
+- ✔ Explored for meaningful patterns  
+
+---
 
 ## 👨‍💻 My Role
-I was responsible for transforming the raw data into an analysis-ready asset and uncovering early insights that could guide the product and modeling teams.  
-This included:
+I was responsible for transforming the raw data into an analysis-ready asset and uncovering early insights that could guide both the product team and future modeling work.
 
--  Data integration  
--  Data cleaning & standardization  
--  Exploratory data analysis (EDA)  
--  Feature engineering  
--  Preparing inputs for machine learning pipelines  
+My responsibilities included:
 
+- ✔ Data integration  
+- ✔ Data cleaning & standardization  
+- ✔ Exploratory Data Analysis (EDA)  
+- ✔ Feature engineering  
+- ✔ Preparing inputs for machine learning pipelines  
 
+---
+
+## 🎯 Project Objectives & Deliverables
+
+### 1️⃣ Import, Join & QA the Data  
+**Objective:** Consolidate customer and account information from multiple Excel sheets into a single, reliable dataset.
+
+**What I did:**
+
+- Imported two sheets from the `Bank_Churn_Messy.xlsx` file:
+  - Customer information  
+  - Account information  
+- Performed a **left join** on `CustomerId` to keep all customers and bring in their account details.  
+- Removed duplicate records after the merge.  
+- Validated the join by checking shapes, types, and summaries of the resulting dataset.
+
+**Key Deliverable:** A unified, de-duplicated customer–account dataset ready for cleaning and analysis.
+
+---
+
+### 2️⃣ Clean & Standardize the Data  
+**Objective:** Ensure the dataset is accurate, consistent, and suitable for downstream analysis and modeling.
+
+**What I did:**
+
+- Cleaned currency fields (`EstimatedSalary`, `Balance`) by:
+  - Removing the `€` symbol  
+  - Converting values to numeric types (`float`)  
+
+- Resolved duplicated tenure columns produced during the merge:
+  - Dropped `Tenure_y`  
+  - Renamed `Tenure_x` → `Tenure`  
+
+- Standardized categorical values in `Geography`  
+  (e.g. grouping variants such as `France`, `French`, `FRA` under a single `"France"` label).
+
+- Handled missing values by:
+  - Filling missing `Surname` with `"MISSING"`  
+  - Imputing missing `Age` with the median age  
+
+**Key Deliverable:** A clean, standardized dataset with consistent fields, ready for EDA.
+
+---
+
+### 3️⃣ Explore Feature Relationships with Customer Churn  
+**Objective:** Understand how different customer attributes relate to churn and identify potentially predictive features.
+
+I used a variety of visualizations to explore relationships between features and the churn label (`Exited`).
+
+---
+
+## 📊 Exploratory Data Analysis (EDA)
+
+### 3.1 Overall Churn Distribution
+
+🔹 **Notebook source:** `churn_df["Exited"].value_counts(normalize=True).plot.bar()`  
+
+📌 **How to use it in your portfolio:**
+
+- **Export this plot** from your notebook and save it as:  
+  `images/churn_distribution.png`
+
+- **Embed it in your Markdown:**
+
+```md
+![Churn distribution bar chart](images/churn_distribution.png)
+
+sns.barplot(data=churn_df, x="Geography", y="Exited");
+git add images/churn_distribution.png
+git commit -m "Add churn distribution chart"
+git push
