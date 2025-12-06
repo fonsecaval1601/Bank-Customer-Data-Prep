@@ -100,17 +100,5 @@ I used a variety of visualizations to explore relationships between features and
 
 🔹 **Notebook source:** `churn_df["Exited"].value_counts(normalize=True).plot.bar()`  
 
-📌 **How to use it in your portfolio:**
 
-- **Export this plot** from your notebook and save it as:  
-  `images/churn_distribution.png`
 
-- **Embed it in your Markdown:**
-
-```md
-![Churn distribution bar chart](images/churn_distribution.png)
-
-sns.barplot(data=churn_df, x="Geography", y="Exited");
-git add images/churn_distribution.png
-git commit -m "Add churn distribution chart"
-git push
