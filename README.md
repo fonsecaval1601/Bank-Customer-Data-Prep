@@ -98,7 +98,66 @@ I used a variety of visualizations to explore relationships between features and
 
 ### 3.1 Overall Churn Distribution
 
-🔹 **Notebook source:** `churn_df["Exited"].value_counts(normalize=True).plot.bar()`  
+🔹 **Notebook source:** `churn_df["Exited"].value_counts(normalize=True).plot.bar()` 
+
+### 🌍 3.2 Churn by Geography
+
+🔹 **Notebook source:** ![Churn rate by geography](images/churn_by_geography.png)
 
 
+### 👥 3.3 Churn by Gender & Other Categorical Variables
 
+🔹 **Notebook source:** ![Churn rate by geography](images/churn_by_geography.png)
+
+
+### 📦 3.4 Boxplots of Numerical Features vs Churn
+
+🔹 **Notebook source:** ![Churn rate by geography](images/churn_by_geography.png)
+images/age_boxplot_churn.png
+
+images/balance_boxplot_churn.png
+
+images/tenure_boxplot_churn.png
+
+
+### 📈 3.5 Distribution of Key Variables (Histograms)
+
+images/age_hist_churn.png
+
+images/balance_hist_churn.png
+
+images/salary_hist_churn.png
+
+## 🧠 4️⃣ Feature Engineering & Modeling Preparation
+
+### 4.1 Engineered Feature: Balance-to-Income Ratio
+
+Filenames:
+
+images/balance_income_boxplot_clipped.png
+
+md
+Copiar código
+![Balance to income ratio vs churn](images/balance_income_boxplot_clipped.png)
+
+### 4.2 Modeling Dataset Preparation
+To create a machine-learning–ready dataset:
+
+Removed ID-like columns (CustomerId, Surname)
+
+One-hot encoded categorical features using get_dummies(..., drop_first=True)
+
+Validated distributions with describe()
+
+Deliverable:
+A fully cleaned, encoded modeling_df suitable for churn modeling and clustering.
+
+### 📈 Key Insights
+
+Churn differs significantly across regions, making geography a strong segmentation variable
+
+Tenure, Age, and Balance are strong indicators of churn likelihood
+
+The engineered balance_v_income feature adds meaningful predictive value
+
+The dataset’s class imbalance must be addressed before modeling
