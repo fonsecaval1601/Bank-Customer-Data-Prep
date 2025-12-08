@@ -103,7 +103,7 @@ I used a variety of visualizations to explore relationships between features and
 ### 🌍 3.2 Churn by Geography
 
 🔹 **Notebook source:** ![Churn rate by geography](./images/churn_by_geography.png)
-![image alt](1.PNG)
+![image alt](./1.PNG)
 
 ### 👥 3.3 Churn by Gender & Other Categorical Variables
 
