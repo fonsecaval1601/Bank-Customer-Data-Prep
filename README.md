@@ -1,6 +1,6 @@
 # 🏦 Bank Customer Data Preparation & Exploration  
 ## 📘 A Data Science Case Study | Customer Churn & Segmentation Project
-![Filtros aplicados en la tabla](./images/1.png)
+![Filtros aplicados en la tabla](./images/1.PNG)
 
 
 ## 🎯 Overview
