@@ -1,7 +1,5 @@
 # 🏦 Bank Customer Data Preparation & Exploration  
 ## 📘 A Data Science Case Study | Customer Churn & Segmentation Project
-![Filtros aplicados en la tabla](./images/1.PNG)
-
 
 ## 🎯 Overview
 This project showcases my work preparing and exploring customer data for a national banking institution. The goal was to transform raw operational data into a clean, validated, and insights-ready dataset to support two machine learning initiatives:
@@ -100,7 +98,7 @@ I used a variety of visualizations to explore relationships between features and
 
 ### 3.1 Overall Churn Distribution
 
-🔹 **Notebook source:** `churn_df["Exited"].value_counts(normalize=True).plot.bar()` 
+🔹 **Notebook source:** ![Churn Distribution](./images/churn_distribution.png)
 
 ### 🌍 3.2 Churn by Geography
 
